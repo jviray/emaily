@@ -19,7 +19,7 @@ class App extends Component {
       <div className="container">
         <BrowserRouter>
           <Header />
-          <div style={{ paddingRight: '15px', paddingLeft: '15px' }}>
+          <div>
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
