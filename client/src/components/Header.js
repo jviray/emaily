@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Payments from './Payments';
 
 class Header extends Component {
   renderContent() {
@@ -16,18 +17,21 @@ class Header extends Component {
         );
 
       default:
-        return (
-          <li>
+        return [
+          <li key={1}>
+            <Payments />
+          </li>,
+          <li key={2}>
             <a href="/api/logout">LOGOUT</a>
           </li>
-        );
+        ];
     }
   }
 
   render() {
     return (
       <nav>
-        <div className="nav-wrapper" style={{ paddingLeft: '15px' }}>
+        <div className="nav-wrapper" style={{ paddingLeft: '17px' }}>
           <Link
             to={this.props.auth ? '/surveys' : '/'}
             className="left brand-logo"
