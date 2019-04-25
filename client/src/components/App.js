@@ -5,7 +5,7 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h4>Dashboard</h4>;
+import Dashboard from './Dashboard';
 const SurveyNew = () => <h4>SurveyNew</h4>;
 
 // Functional React component syntax
@@ -16,10 +16,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <BrowserRouter>
           <Header />
-          <div>
+          <div className="container" style={{ marginTop: '20px' }}>
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
