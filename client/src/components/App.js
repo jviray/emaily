@@ -6,7 +6,7 @@ import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-const SurveyNew = () => <h4>SurveyNew</h4>;
+import SurveyNew from './surveys/SurveyNew';
 
 // Functional React component syntax
 class App extends Component {
