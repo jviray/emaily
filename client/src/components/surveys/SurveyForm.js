@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import SurveyField from './SurveyField';
+import validateEmails from '../../utils/validateEmails';
 
 const FIELDS = [
   { label: 'Survey Title', name: 'title' },
@@ -49,8 +50,19 @@ class SurveyForm extends Component {
   }
 }
 
+// Runs automatically when app boots up
 function validate(values) {
   const errors = {};
+
+  // Passes empty string if values is undefined
+  errors.emails = validateEmails(values.emails || '');
+
+  // Checks if user has input values for each field
+  FIELDS.forEach(({ name }) => {
+    if (!values[name]) {
+      errors[name] = '* Required';
+    }
+  });
 
   return errors;
 }
