@@ -52,7 +52,7 @@ function validate(values) {
   const errors = {};
 
   // Passes empty string if values is undefined
-  errors.emails = validateEmails(values.emails || '');
+  errors.recipients = validateEmails(values.recipients || '');
 
   // Checks if user has input values for each field
   formFields.forEach(({ name }) => {
